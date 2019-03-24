@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body id="results_page_body">
+    <!-- navbar -->
+    <div id="main_navbar" class="container-fluid">
+        <div class="row">
+            <div class="col-6">
+                <img id="logo" src="/static/images/Logo.png">
+            </div>
+            <div id="sign_out" class="col-6">
+                Sign out <i class="fas fa-user-circle"></i>
+            </div>
+        </div>
+    </div> 
+
+    <!-- search form -->
+     <div class="container center_this" style="margin-top: 15px; font-family:Roboto; color:#393939;">
+         <form id="search_form" action="/search" method="POST">
+            <div class="form-row form-group">
+                <label for="location" class="col-sm-2 col-form-label find_facilities_with" style="font-family: Roboto; color: #393939">Find facilities with:</label>
+                
+                <div class="col-sm-2 form-control"><input required type="text" id="location" name="location" placeholder="Location/Zipcode"></div>
+                
+                <div class="col-sm-2  select-wrapper">
+                     <select required name="facility_type" id="facility_type" class="form-control">
+                        <option value="" selected disabled>Facility Type</option>
+                        {% for facility_type in facility_types %}
+                            <option value="{{ facility_type['name'] }}">{{ facility_type['name'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-sm-2 select-wrapper">
+                     <select required name="condition" id="condition" class="form-control">
+                        <option value="" selected disabled>Medical Condition</option>
+                        {% for condition in conditions %}
+                            <option value="{{ condition['name'] }}">{{ condition['name'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="col-sm-2 select-wrapper">
+                     <select required name="insurance" id="insurance" class="form-control">
+                        <option value="" selected disabled>Insurance</option>
+                        {% for insurance in insurances %}
+                            <option value="{{ insurance['name'] }}">{{ insurance['name'] }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div id="search_button" class="col-sm-2" style="text-align: left;">
+                    <button type="submit"><i class="fas fa-search" style="color: #0083B0;"></i></button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+  <!-- results -->
+  <div class="container results-stuff center_this">
+    <div class="row">
+        <div class="col-sm-12 col-md-6 style="overflow:scroll; height:400px;"">
+            <ul class="list-group list-group-flush">
+                {% for facility in facilities %}
+
+                <li class="list-group-item">
+                    <div class="container list-stuff" data-facid="${facility_id}">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6" style="text-align: left;">
+                                <h3 class="facility_name">{{ facility.name }}</h3>
+                                <p class="facility_stuff">Phone: {{ facility.phone }}<br>Fax: {{ facility.fax }}</p>
+                                <p class="facility_stuff">{{ facility.address }}</p>
+                            </div>
+                            <div class="col-sm-12 col-md-6" style="text-align: right;">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <div class="thumbs_wrapper">
+                                    <div class="thumbs">
+                                        <span class="dislike">{{ facility.dislikes }}</span>&nbsp;&nbsp;<i class="fas fa-thumbs-down"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="programs_map" class="col-sm-12 col-md-6">
+        </div>
+    </div>
+  </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- Personal scripts -->
+    <!-- Google maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWAcHlAY8_Z6zH9AvdCuevwKggXg4ceXY&callback=initMap"></script>
+    <!-- Personal scripts -->
+    <script src="/static/js/results.js"></script>
+</body>
+{% endblock %}

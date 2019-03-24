@@ -1,0 +1,52 @@
+body#results_page_body {
+    background: #E5E5E5;;
+    color: #0083B0;
+}
+
+#main_navbar {
+    background: linear-gradient(90deg, #0083B0 0%, #00B4DB 95.03%);
+    color: #FFFFFF;
+}
+
+ .fa-star {
+    color: #F2B720;
+ }
+
+.fa-thumbs-down {
+     color: #393939;
+     font-size: 1.5em;
+}
+
+.thumbs_wrapper {
+    height: 90%;
+    position: relative;
+}
+
+.thumbs {
+    position: absolute;
+    bottom: 1em;
+    right: 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: normal;
+}
+
+.dislike {
+    position: relative;
+    bottom: 0.5em;
+}
+
+.list-group {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.results-stuff {
+}
+
+/*#programs-map {
+    height: 300px;
+    display: none;
+}*/

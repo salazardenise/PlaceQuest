@@ -1,0 +1,85 @@
+body {
+    margin-bottom: 25px;
+}
+
+body#main_page_body {
+    background: linear-gradient(90deg, #0083B0 0%, #00B4DB 95.03%);
+    color: #FFFFFF;
+}
+
+.form-control {
+    box-shadow: 0px 4px 4px #F1F1F1;
+    border-radius: 3px;
+}
+
+#main_navbar {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+.find_facilities_with {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+    color: #FFFFFF;
+}
+
+#sign_out {
+    text-align: right;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+}
+
+.center_this {
+    text-align: center;
+}
+
+#logo {
+    width: 80px;
+}
+
+#main_image {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 40%;
+}
+
+#location,
+#facility_type,
+#condition,
+#insurance {
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: normal;
+
+    color: #0083B0;
+}
+
+ .facility_name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: normal;
+
+    color: #00B4DB;
+ }
+
+ .facility_stuff {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: normal;
+
+    color: #393939;
+ }
