@@ -1,8 +1,8 @@
-#PlaceQuest
+# PlaceQuest
 
 This application was created for the Hack Mental Health 2019 Conference in San Francisco.
 
-# Set-Up
+## Set-Up
 After cloning the repo, do the following:
 
 ```
