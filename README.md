@@ -22,6 +22,7 @@ python3 seed.py
 
 To start the app:
 ```
+cd src
 python3 server.py
 ```
 
