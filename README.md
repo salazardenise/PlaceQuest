@@ -16,13 +16,13 @@ virtualenv env
 source env/bin/activate
 pip3 install -r requirements.txt
 
+cd src
 createdb placequestdb
 python3 seed.py
 ```
 
 To start the app:
 ```
-cd src
 python3 server.py
 ```
 
